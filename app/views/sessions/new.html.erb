@@ -1,0 +1,19 @@
+<h1>Please Log In</h1>
+
+<% if @message %>
+<p><%= @message %></p>
+<% end %>
+
+<%= form_for :session, url: '/sessions' do |f| %>
+<p>
+  <%= f.label :email %><br>
+  <%= f.text_field :email %>
+</p>
+<p>
+  <%= f.label :password %><br>
+  <%= f.password_field :password %>
+</p>
+<p>
+  <%= f.submit %>
+</p>
+<% end %>
