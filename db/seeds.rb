@@ -1,7 +1,6 @@
-Deck.delete_all
-Card.delete_all
-
-
+Round.destroy_all
+Deck.destroy_all
+Card.destroy_all
 
 moxie = Deck.create(title: "All About Moxie")
 rutabaga = Deck.create(title: "All About Rutabaga")
