@@ -7,6 +7,16 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
+  <div id="header">
+    <button class="button"><%= link_to "Home", root_path  %></button>
+    <% if !logged_in? %>
+      <button class="button"><%= link_to "Register", new_user_path  %></button>
+      <button class="button"><%= link_to "Login", new_session_path  %></button>
+    <% elsif logged_in? %>
+      <button class="button"><%= link_to current_user.username, user_show_path %></button>
+      <button class="button"><%= link_to "Log Out", sessions_path(@session), method: :delete %></button>
+    <% end %>
+  </div>
 
   <body>
     <%= yield %>
