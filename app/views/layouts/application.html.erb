@@ -13,8 +13,8 @@
       <button class="button"><%= link_to "Register", new_user_path  %></button>
       <button class="button"><%= link_to "Login", new_session_path  %></button>
     <% elsif logged_in? %>
-      <button class="button"><%= link_to current_user.username, user_show_path %></button>
-      <button class="button"><%= link_to "Log Out", sessions_path(@session), method: :delete %></button>
+      <button class="button"><%= link_to current_user.username, user_path(current_user) %></button>
+      <button class="button"><%= link_to "Log Out", session_path(current_user), method: :delete %></button>
     <% end %>
   </div>
 

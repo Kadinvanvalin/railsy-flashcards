@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
       session[:user_id] = @user.id
       redirect_to '/'
     else
-      @message = "Either your email or password was wrong"
+      @message = "Either your username or password was wrong"
       render "new"
     end
   end
