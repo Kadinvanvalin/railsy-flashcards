@@ -1,0 +1,14 @@
+<p>Question:</p>
+<p><%= @card.question %></p>
+
+<p>Your Answer:</p>
+<%= form_for :guess do |f| %>
+<p>
+  <%= f.label :guess %><br>
+  <%= f.text_field :guess %>
+</p>
+<p>
+  <%= f.submit %>
+</p>
+<% end %>
+

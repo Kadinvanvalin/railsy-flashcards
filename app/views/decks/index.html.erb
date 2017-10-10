@@ -1,6 +1,12 @@
 <h1>Choose your deck to begin!</h1>
 
+<% if @errors %>
+  <% @errors.each do |error| %>
+  <p><%= error %></p>
+<% end %>
+<% end %>
+
 <% @decks.each do |deck| %>
-  <p><%= link_to deck.title, rounds_url(deck_id: deck.id), method: :post %></p>
+  <p><%= link_to deck.title, deck_path(deck) %></p>
   <% end %>
 
